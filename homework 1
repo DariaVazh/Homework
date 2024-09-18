@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); 
+        System.out.print("Введите целое число: "); //ввод числа с клавиатуры
+        int number = scanner.nextInt();
+        String str=""; //строка в которую будем собирать остатки
+      
+        while(number > 0){ //цикл для сбора остатки от деления на 2
+            int t = number%2;
+            str += t;
+            number= number/2;
+        }
+      
+        var reversed = new StringBuilder(str) //чтение строки слева на право
+            .reverse()
+            .toString();
+      
+        System.out.println(reversed); //вывод
+    }
+}

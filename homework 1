@@ -4,38 +4,38 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Введите целое число: ");
+        System.out.print("Введите целое число: "); //ввод числа с клавиатуры
         int number = scanner.nextInt();
         
-        if (number>=0){ 
-            String str="";
-        while(number > 0){
+        if (number>=0){ //проверка на знак числа, начало алгоритма для неотрицательных чисел
+            String str=""; 
+        while(number > 0){ //цикл для сбора остатков от деления в строку
             int t = number%2;
             str += t;
             number= number/2;
         
         }
-        var reversed = new StringBuilder(str)
+        var reversed = new StringBuilder(str) //чтение строки справа на лево
             .reverse()
             .toString();
-        System.out.println("Двоичная запись натурального числа: " + reversed);
+        System.out.println("Двоичная запись натурального числа: " + reversed); //вывод двоичной записи неотрицательного числа
         }
-        else {
-            number= -1 * number;
+        else { //начало алгоритма для отрицательных чисел
+            number= -1 * number; //преобразование отрицательного числа в положительное
              String str="";
-        while(number > 0){
+        while(number > 0){ //цикл для сбора остатков от деления в строку
             int t = number%2;
             str += t;
             number= number/2;
         
         }
-        var reversed = new StringBuilder(str)
+        var reversed = new StringBuilder(str)//чтение строки справа на лево
             .reverse()
             .toString();
-        String ans = str.replace('1', '2');
+        String ans = str.replace('1', '2'); //преобразование полученного значения в обратный код
         ans = str.replace('0', '1');
         ans = str.replace('2', '1');
-        System.out.println("Обратный код: " + ans);  
+        System.out.println("Обратный код: " + ans);  //вывод обратного кода для отрицательного числа
         }   
     }
 }

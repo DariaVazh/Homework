@@ -1,21 +1,41 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); 
-        System.out.print("Введите целое число: "); //ввод числа с клавиатуры
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите целое число: ");
         int number = scanner.nextInt();
-        String str=""; //строка в которую будем собирать остатки
-      
-        while(number > 0){ //цикл для сбора остатки от деления на 2
+        
+        if (number>=0){ 
+            String str="";
+        while(number > 0){
             int t = number%2;
             str += t;
             number= number/2;
+        
         }
-      
-        var reversed = new StringBuilder(str) //чтение строки слева на право
+        var reversed = new StringBuilder(str)
             .reverse()
             .toString();
-      
-        System.out.println(reversed); //вывод
+        System.out.println("Двоичная запись натурального числа: " + reversed);
+        }
+        else {
+            number= -1 * number;
+             String str="";
+        while(number > 0){
+            int t = number%2;
+            str += t;
+            number= number/2;
+        
+        }
+        var reversed = new StringBuilder(str)
+            .reverse()
+            .toString();
+        String ans = str.replace('1', '2');
+        ans = str.replace('0', '1');
+        ans = str.replace('2', '1');
+        System.out.println("Обратный код: " + ans);  
+        }   
     }
 }
